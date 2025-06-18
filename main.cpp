@@ -37,7 +37,7 @@ void registro(matricula matriculas){
 		matriculas.placa[strcspn(matriculas.placa, "\n")] = 0;
 		if (esPlacaValida(matriculas.placa)==0){
 			limpiarPantalla();
-			printf("Ingrese placa valida (ABC123 sin guion).\n");
+			printf("Ingrese placa valida (ABC1234 sin guion).\n");
 		}
 	}while(esPlacaValida(matriculas.placa)==0);    
 	
@@ -71,7 +71,7 @@ void registro(matricula matriculas){
 	} while (matriculas.avaluo <= 0);
 	limpiarPantalla();
 	//Recursividad
-	printf("¿Desea ingresar mas datos?(Si=1, No=0)\n");
+	printf("Â¿Desea ingresar mas datos?(Si=1, No=0)\n");
 	scanf("%d", &opcion);
 	while (getchar()!= '\n');
 	if (opcion == 0){   //caso base//
