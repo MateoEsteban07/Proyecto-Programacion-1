@@ -22,7 +22,7 @@ int validarOracion(const char *oracion) {
 }
 	//Funcion validar placa
 int esPlacaValida(const char *placa) {
-	if (strlen(placa) != 6)
+	if (strlen(placa) != 7)
 		return 0;
 	
 		// Validar letras
@@ -31,7 +31,7 @@ int esPlacaValida(const char *placa) {
 			return 0;
 	}
 		
-		// Validar dígitos
+		// Validar dÃ­gitos
 	for (int i = 3; i < 6; i++) {
 		if (!isdigit(placa[i]))
 			return 0;
