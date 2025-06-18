@@ -2,9 +2,9 @@
 _ El programa esta orientado en el proceso de matriculacion de vehiculos, donde exista: un registro de vehículos, calcular el valor de la matrícula, registrar cumplimiento de revisiones técnicas, generar comprobante, bucar vehiculo por placa y listar vehículos.
 # Comenzando 🚀
 1. Registro de Vehiculos
-   1.1 Validaciones
-   1.2 Menu
-   1.3 Correcion de errores 
+   _1.1 Validaciones
+   _1.2 Menu
+   _1.3 Correcion de errores 
 
 
 
