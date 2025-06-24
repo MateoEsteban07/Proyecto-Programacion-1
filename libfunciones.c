@@ -31,7 +31,7 @@ int esPlacaValida(const char *placa) {
 			return 0;
 	}
 		
-		// Validar dígitos
+		// Validar digitos
 	for (int i = 3; i < 6; i++) {
 		if (!isdigit(placa[i]))
 			return 0;

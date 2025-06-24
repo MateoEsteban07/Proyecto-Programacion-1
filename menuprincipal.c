@@ -14,7 +14,7 @@ void limpiarBuffer(){
 }
 
 	void mostrarMenu() {
-	printf("__________________________________________________\n");
+	printf("\n__________________________________________________\n");
 	printf("|Bienvenido al Sistema de Matriculacion Vehicular|\n");
 	printf("|----------------------------------------------- |\n");   
 	printf("|  1. Registrar vehiculo                         |\n");
