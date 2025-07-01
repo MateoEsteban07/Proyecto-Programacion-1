@@ -10,6 +10,9 @@ typedef struct{
 	char anio[10];
 	char cedula[20];
 	float avaluo;
+	int cilindraje;
+	int tipo;
+	int peso;
 }matricula;
 
 
