@@ -15,7 +15,6 @@ typedef struct{
 	int peso;
 }matricula;
 
-
 int  validarNumeros(const char);
 int validarOracion(const char);
 int esPlacaValida(const char);

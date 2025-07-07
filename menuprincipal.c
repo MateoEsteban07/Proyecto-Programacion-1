@@ -23,7 +23,7 @@ void limpiarBuffer(){
 	printf("|                                                |\n");
 	printf("|  3. Buscar vehiculo por placa                  |\n");
 	printf("|                                                |\n");
-	printf("|  4. Generar Comprobante                        |\n");
+	printf("|  4. Guardar lista de datos                     |\n");
 	printf("|                                                |\n");
 	printf("|  5. Salir                                      |\n");
 	printf("|________________________________________________|\n");

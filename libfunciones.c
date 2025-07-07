@@ -39,6 +39,3 @@ int esPlacaValida(const char *placa) {
 		
 	return 1;
 	}
-	//Funcion calculo matricula
-	
-	
