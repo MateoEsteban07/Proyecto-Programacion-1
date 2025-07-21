@@ -24,7 +24,7 @@
 
 ## INTRODUCCIÓN
 
-El **Sistema de Matriculación Vehicular** es una aplicación desarrollada en C/C++ que permite gestionar el proceso de matriculación de vehículos, calcular los costos asociados y generar comprobantes de pago. El sistema está diseñado para ser utilizado por administradores autorizados en entidades de tránsito.
+El **Sistema de Matriculación Vehicular** es una aplicación desarrollada en C que permite el registro de matriculación de vehículos, calcular los costos asociados y generar comprobantes de pago. El sistema está diseñado para ser utilizado por administradores autorizados en entidades de tránsito.
 
 ### Objetivos del Sistema
 - Automatizar el proceso de matriculación vehicular
@@ -63,7 +63,7 @@ El **Sistema de Matriculación Vehicular** es una aplicación desarrollada en C/
 - Sistema operativo: Windows 7 o superior
 
 ### **Software Requerido**
-- Compilador C/C++ (MinGW, GCC, o Visual Studio)
+- Compilador C/C++ ZinjaI
 - Windows PowerShell (incluido en Windows)
 
 ---
@@ -72,12 +72,9 @@ El **Sistema de Matriculación Vehicular** es una aplicación desarrollada en C/
 
 ### **Opción 1: Usar Ejecutable Precompilado**
 ```powershell
-# Navegar a la carpeta del proyecto
-cd "c:\Users\Jorge\Downloads\Proyecto-Programacion-1-Avance-3.1\Debug"
+"
 
-# Ejecutar el programa
-.\MyProject.exe
-```
+
 
 ### **Opción 2: Compilar desde Código Fuente**
 ```powershell
