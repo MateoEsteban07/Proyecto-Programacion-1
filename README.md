@@ -6,7 +6,7 @@ _ El programa esta orientado en el proceso de matriculacion de vehiculos, donde 
 
 
 ### Pre-requisitos 📋
-*ZinjaI [https://zinjai.sourceforge.net/].
+ZinjaI [https://zinjai.sourceforge.net/].
 
 * **Hardware Mínimo:**
 * **Procesador: Intel Pentium 4 o equivalente (1GHz)**
@@ -21,7 +21,7 @@ _ El programa esta orientado en el proceso de matriculacion de vehiculos, donde 
 Descargar los archivos para el debido funcionamiento y abrirlo en la herramienta de ZinjaI
 
 ## Manual tecnico y de Usuario
-* ** lsa**
+* ** jhadsn**
 * ** adsl**
 
 
