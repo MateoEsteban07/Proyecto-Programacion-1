@@ -20,8 +20,9 @@ _ El programa esta orientado en el proceso de matriculacion de vehiculos, donde 
 
 Descargar los archivos para el debido funcionamiento y abrirlo en la herramienta de ZinjaI
 
-## Ejecutando las pruebas ⚙️
-
+## Manual tecnico y de Usuario
+* ** lsa**
+* ** adsl**
 
 
 ## Construido con 🛠️
