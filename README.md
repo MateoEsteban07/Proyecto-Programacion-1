@@ -8,11 +8,11 @@ _ El programa esta orientado en el proceso de matriculacion de vehiculos, donde 
 ### Pre-requisitos 📋
 *ZinjaI [https://zinjai.sourceforge.net/].
 
-*Hardware Mínimo:
-*Procesador: Intel Pentium 4 o equivalente (1GHz)
-*Memoria RAM: 512 MB
-*Almacenamiento: 50 MB libres
-*Sistema Operativo: Windows 8 o superior
+* **Hardware Mínimo:**
+* **Procesador: Intel Pentium 4 o equivalente (1GHz)**
+* **Memoria RAM: 512 MB**
+* **Almacenamiento: 50 MB libres**
+* **Sistema Operativo: Windows 8 o superior**
 
 
 
