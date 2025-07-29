@@ -138,7 +138,7 @@ void registrar_administrador( PQR adm){
 ///////////////////////////////////////////////////////////////////
 void registro(matricula* lista, int* total) { 
 	if (*total >= 100) {
-		printf("Se alcanzó el número máximo de registros.\n");
+		printf("Se alcanzÃ³ el nÃºmero mÃ¡ximo de registros.\n");
 		return;
 	}
 	matricula* matriculas = &lista[*total];
@@ -335,9 +335,9 @@ void calcular_matricula(matricula* m) {
 	}
 	
 	// Calcular impuesto verde
-	if (m->tipo == 1) { // Vehículo a combustible
+	if (m->tipo == 1) { // VehÃ­culo a combustible
 		valor_de_imp_verde = ((m->cilindraje - 1500) * tarifa_cilindraje) * (1 + tarifa_edad);
-	} else { // Vehículo eléctrico
+	} else { // VehÃ­culo elÃ©ctrico
 		valor_de_imp_verde = 0.0;
 	}
 	if(m->revisionesTecnicas < 3){
@@ -365,8 +365,6 @@ void generarComprobante(matricula* m) {
 	FILE* archivo = fopen(nombreArchivo, "w");
 	
 	if (archivo == NULL) {
-		printf("El mateo y rodrigo no hicieron nada pero me caen muy bien :p. \n");
-		printf("Pero la queria tanto... C L A R I S. \n");
 		printf("Error al abrir el archivo para escritura.\n");
 		return;
 	}
@@ -415,14 +413,14 @@ void generarComprobante(matricula* m) {
 	float valor_a_pagar = valor_de_imp_verde + (m->avaluo / 100) + 22 + 10;
 	
 	// Guardar en archivo
-	fprintf(archivo, "--- COMPROBANTE DE MATRÍCULA ---\n");
+	fprintf(archivo, "--- COMPROBANTE DE MATRÃCULA ---\n");
 	fprintf(archivo, "Nombre: %s\n", m->nombre);
-	fprintf(archivo, "Cédula: %s\n", m->cedula);
+	fprintf(archivo, "CÃ©dula: %s\n", m->cedula);
 	fprintf(archivo, "Placa: %s\n", m->placa);
-	fprintf(archivo, "Año: %s (Edad: %d años)\n", m->anio, edad_v);
+	fprintf(archivo, "AÃ±o: %s (Edad: %d aÃ±os)\n", m->anio, edad_v);
 	fprintf(archivo, "Avaluo: %.2f\n", m->avaluo);
 	fprintf(archivo, "Cilindraje: %d\n", m->cilindraje);
-	fprintf(archivo, "Tipo: %s\n", m->tipo == 1 ? "Combustible" : "Eléctrico");
+	fprintf(archivo, "Tipo: %s\n", m->tipo == 1 ? "Combustible" : "ElÃ©ctrico");
 	fprintf(archivo, "Peso: %s\n", m->peso == 1 ? "Pesado" : "Liviano");
 	fprintf(archivo, "Impuesto verde: %.2f $\n", valor_de_imp_verde);
 	fprintf(archivo, "Total a pagar: %.2f $\n", valor_a_pagar);
@@ -529,7 +527,7 @@ void generarComprobante(matricula* m) {
 			fprintf(archivo, "Anio: %s\n", registros[i].anio);
 			fprintf(archivo, "Avaluo: %.2f\n", registros[i].avaluo);
 			fprintf(archivo, "Cilindraje: %d\n", registros[i].cilindraje);
-			fprintf(archivo, "Tipo: %s\n", registros[i].tipo == 1 ? "Combustible" : "Eléctrico");
+			fprintf(archivo, "Tipo: %s\n", registros[i].tipo == 1 ? "Combustible" : "ElÃ©ctrico");
 			fprintf(archivo, "Peso: %s\n", registros[i].peso == 1 ? "Pesado" : "Liviano");
 			fprintf(archivo, "--------------------------\n");
 		}
@@ -600,7 +598,7 @@ void generarComprobante(matricula* m) {
 						case 2:
 							limpiarPantalla();
 							if (totalRegistros > 0) {
-								calcularPorPlaca(registros, totalRegistros); // Último ingresado
+								calcularPorPlaca(registros, totalRegistros); // Ãšltimo ingresado
 							} else {
 								limpiarPantalla();
 								printf("No hay registros.\n");
