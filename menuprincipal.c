@@ -30,3 +30,4 @@ void limpiarBuffer(){
 	printf("|________________________________________________|\n");
 	printf("Seleccione una opcion: ");
 }
+

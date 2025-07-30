@@ -24,4 +24,5 @@ typedef struct{
 int  validarNumeros(const char);
 int validarOracion(const char);
 int esPlacaValida(const char);
-
+void limpiarEspaciosExtra(const char); 
+void limpiarExtremos(const char);
