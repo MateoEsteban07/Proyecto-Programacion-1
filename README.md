@@ -20,9 +20,6 @@ ZinjaI [https://zinjai.sourceforge.net/].
 
 Descargar los archivos para el debido funcionamiento y abrirlo en la herramienta de ZinjaI
 
-## Manual tecnico y de Usuario
-* ** jhadsn**
-* ** adsl**
 
 
 ## Construido con 🛠️
