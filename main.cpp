@@ -3,36 +3,12 @@
 #include<ctype.h>
 #include<stdlib.h>
 #include"libfunciones.h"
-#include"menuprincipal.c" 
+#include"menuprincipal.c"
+#include"menusecundario.c"
 #define MAX_REGISTROS 135
 
 int opcion, peso_v, anioint;
 float valor_a_pagar, impverde;
-
-////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////
-void limpiarEspaciosExtra(char* cadena) {
-	int i = 0, j = 0;
-	int espacioPrevio = 0;
-	while (cadena[i]) {
-		if (cadena[i] != ' ') {
-			cadena[j++] = cadena[i];
-			espacioPrevio = 0;
-		} else if (!espacioPrevio) {
-			cadena[j++] = ' ';
-			espacioPrevio = 1;
-		}
-		i++;
-	}
-	cadena[j] = '\0';
-}
-
-void limpiarExtremos(char* texto) {
-	while (texto[0] == ' ')
-		memmove(texto, texto + 1, strlen(texto));
-	while (strlen(texto) > 0 && texto[strlen(texto) - 1] == ' ')
-		texto[strlen(texto) - 1] = '\0';
-}
 
 void guardar_administrador( PQR adm){
 	FILE* archivo = fopen("admins.txt","a");
@@ -46,7 +22,6 @@ void guardar_administrador( PQR adm){
 	printf("Admin guardado exitosamente.\n");
 	
 }
-
 
 	int administrador_Existe(char* nombre) {
 		FILE* archivo = fopen("admins.txt", "r");
@@ -290,7 +265,6 @@ void registro(matricula* lista, int* total) {
 	int opcion = 0;
 	scanf("%d", &opcion);
 	while (getchar() != '\n');
-	
 	if (opcion == 1) {
 		limpiarPantalla();
 		registro(lista, total);
@@ -303,7 +277,6 @@ void calcular_matricula(matricula* m) {
 	float tarifa_edad = 0.0, tarifa_cilindraje = 0.0, valor_de_imp_verde = 0.0;
 	int anioExtraido = atoi(m->anio);
 	int edad_v = 2025 - anioExtraido, multaRevisiones;
-	
 	// Calcular tarifa por cilindraje
 	if (m->cilindraje <= 1500) {
 		tarifa_cilindraje = 0.0;
@@ -320,7 +293,6 @@ void calcular_matricula(matricula* m) {
 	} else {
 		tarifa_cilindraje = 0.35;
 	}
-	
 	// Calcular tarifa por edad
 	if (edad_v <= 5) {
 		tarifa_edad = 0.0;
@@ -333,7 +305,6 @@ void calcular_matricula(matricula* m) {
 	} else {
 		tarifa_edad = 0.20;
 	}
-	
 	// Calcular impuesto verde
 	if (m->tipo == 1) { // Vehículo a combustible
 		valor_de_imp_verde = ((m->cilindraje - 1500) * tarifa_cilindraje) * (1 + tarifa_edad);
@@ -345,7 +316,6 @@ void calcular_matricula(matricula* m) {
 	}
 	// Total a pagar
 	float valor_a_pagar = valor_de_imp_verde + (m->avaluo / 100) + 22 + 10 + multaRevisiones;
-	
 	// Mostrar resultados
 	printf("\n--- DETALLES DE MATRICULA ---\n");
 	printf("Placa: %s\n", m->placa);
@@ -363,16 +333,13 @@ void generarComprobante(matricula* m) {
 	char nombreArchivo[100];
 	sprintf(nombreArchivo, "comprobante_%s.txt", m->placa);
 	FILE* archivo = fopen(nombreArchivo, "w");
-	
 	if (archivo == NULL) {
 		printf("Error al abrir el archivo para escritura.\n");
 		return;
 	}
-	
 	float tarifa_edad = 0.0, tarifa_cilindraje = 0.0, valor_de_imp_verde = 0.0;
 	int anioExtraido = atoi(m->anio);
 	int edad_v = 2025 - anioExtraido;
-	
 	// Calcular tarifa por cilindraje
 	if (m->cilindraje <= 1500) {
 		tarifa_cilindraje = 0.0;
@@ -389,7 +356,6 @@ void generarComprobante(matricula* m) {
 	} else {
 		tarifa_cilindraje = 0.35;
 	}
-	
 	// Calcular tarifa por edad
 	if (edad_v <= 5) {
 		tarifa_edad = 0.0;
@@ -402,16 +368,13 @@ void generarComprobante(matricula* m) {
 	} else {
 		tarifa_edad = 0.20;
 	}
-	
 	// Calcular impuesto verde
 	if (m->tipo == 1) {
 		valor_de_imp_verde = ((m->cilindraje - 1500) * tarifa_cilindraje) * (1 + tarifa_edad);
 	} else {
 		valor_de_imp_verde = 0.0;
 	}
-	
 	float valor_a_pagar = valor_de_imp_verde + (m->avaluo / 100) + 22 + 10;
-	
 	// Guardar en archivo
 	fprintf(archivo, "--- COMPROBANTE DE MATRÍCULA ---\n");
 	fprintf(archivo, "Nombre: %s\n", m->nombre);
@@ -425,13 +388,10 @@ void generarComprobante(matricula* m) {
 	fprintf(archivo, "Impuesto verde: %.2f $\n", valor_de_imp_verde);
 	fprintf(archivo, "Total a pagar: %.2f $\n", valor_a_pagar);
 	fprintf(archivo, "-------------------------------\n");
-	
 	fclose(archivo);
 	limpiarPantalla();
 	printf("Comprobante generado exitosamente: %s\n", nombreArchivo);
 }
-
-
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////
 		void calcularPorPlaca(matricula* registros, int total) {
@@ -475,7 +435,6 @@ void generarComprobante(matricula* m) {
 					break;
 				}
 			}
-			
 			if (!encontrado) {
 				limpiarPantalla();
 				printf("No se encontro un auto con la placa %s.\n", placaBuscar);
@@ -505,15 +464,12 @@ void generarComprobante(matricula* m) {
 			}
 		}
 	////////////////////////////////////////////////////////////////////
-	
 	void guardarEnArchivo(matricula* registros, int total) {
 		FILE* archivo = fopen("vehiculos_registrados.txt", "w");
-		
 		if (archivo == NULL) {
 			printf("Error al abrir el archivo para escritura.\n");
 			return;
 		}
-		
 		for (int i = 0; i < total; i++) {
 			fprintf(archivo, "--------------------------\n");
 			fprintf(archivo, "COMPROBANTE DE REGISTRO #%d\n", i + 1);
@@ -531,41 +487,29 @@ void generarComprobante(matricula* m) {
 			fprintf(archivo, "Peso: %s\n", registros[i].peso == 1 ? "Pesado" : "Liviano");
 			fprintf(archivo, "--------------------------\n");
 		}
-		
 		fclose(archivo);
 		printf("Registros guardados exitosamente en 'vehiculos_registrados.txt'\n");
 	}
 	
 	////////////////////////////////////////////////////////////////////
-	
 	int main (){
 		int totalRegistros = 0;
 		int option;
 		int opcion_adm;
 		int estadoLogin;
-		
 		char placaBuscar[12];
 		matricula registros[MAX_REGISTROS]; 
 		PQR nuevo;
 		do{	
-			printf("------------------------------------\n");
-			printf("Sistema de Administracion\n");
-			printf("------------------------------------\n");
-			printf("0. Salir \n");
-			printf("1. Registrar administrador\n");
-			printf("2. Iniciar sesion como administrador\n");
-			printf("------------------------------------\n");
-			printf("Seleccione una opcion: ");
+			mostrarMenu1();
 			if (scanf("%d", & opcion_adm)!=1) {
 				limpiarBuffer();
 				limpiarPantalla();
 				printf("Entrada invalida. Use solo numeros (0-2).\n");
 				opcion_adm = -1;
 				continue;
-				
 			}
 			limpiarBuffer();
-			
 			switch (opcion_adm) {
 			case 0:
 				limpiarPantalla();
@@ -631,8 +575,6 @@ void generarComprobante(matricula* m) {
 							printf("Opcion no valida.(1-5).\n");
 						}
 					} while (option != 5);
-					
-					
 				} else {
 					limpiarPantalla();
 					printf("Admin no encontrado.\n");

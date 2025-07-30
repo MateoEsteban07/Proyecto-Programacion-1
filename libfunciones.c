@@ -39,3 +39,25 @@ int esPlacaValida(const char *placa) {
 		
 	return 1;
 	}
+void limpiarEspaciosExtra(char* cadena) {
+	int i = 0, j = 0;
+	int espacioPrevio = 0;
+	while (cadena[i]) {
+		if (cadena[i] != ' ') {
+			cadena[j++] = cadena[i];
+			espacioPrevio = 0;
+		} else if (!espacioPrevio) {
+			cadena[j++] = ' ';
+			espacioPrevio = 1;
+		}
+		i++;
+	}
+	cadena[j] = '\0';
+}
+
+void limpiarExtremos(char* texto) {
+	while (texto[0] == ' ')
+		memmove(texto, texto + 1, strlen(texto));
+	while (strlen(texto) > 0 && texto[strlen(texto) - 1] == ' ')
+		texto[strlen(texto) - 1] = '\0';
+}
